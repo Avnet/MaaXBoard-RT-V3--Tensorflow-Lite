@@ -1,0 +1,9 @@
+Debug/
+FreeRTOS_TAD_logs/
+
+*.launch
+
+language.settings.xml
+.vscode/
+.settings/
+/.metadata/
