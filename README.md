@@ -10,13 +10,12 @@ TensorFlow Lite model-based implementation of object detector configured to run 
   - [MaaXBoard MIPI CSI camera AES-ACC-MAAX-CAM1](#maaxboard-mipi-csi-camera-aes-acc-maax-cam1)
 - [Preparing the Demo](#preparing-the-demo)
 - [Running the demo](#running-the-demo)
-- [On your device](#on-your-device)
 - [Reference](#reference)
 # Required Hardware
 
 ## MaaXBoard-rt-board 
 
-[<img align="right" src="https://www.avnet.com/wps/wcm/connect/onesite/613510a3-9e14-4827-b6aa-476d3bd4cf80/TNN19189+-+web+optimized.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_NA5A1I41L0ICD0ABNDMDDG0000-613510a3-9e14-4827-b6aa-476d3bd4cf80-nNopqOn">](https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/maaxboard/maaxboard-rt/)
+[<img align="right" src="https://www.avnet.com/opasdata/d120001/derivates/2/072/243/762/TNN19178_web.jpg">](https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/maaxboard/maaxboard-rt/)
 - NXP i.MX RT1176 Processor
 - Arm Cortex-M7 @1GHz, 32KB/32KB L1 Cache
 - Arm Cortex-M4F @400MHz, 16KB/16KB L1 Cache
