@@ -15,7 +15,9 @@ TensorFlow Lite model-based implementation of object detector configured to run 
 
 ## MaaXBoard-rt-board 
 
-[<img align="right" src="https://www.avnet.com/opasdata/d120001/derivates/2/072/243/762/TNN19178_web.jpg">](https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/maaxboard/maaxboard-rt/)
+[<img src="./images/TNN19178_web.jpg">](https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/maaxboard/maaxboard-rt/)
+*<br />[Click image for purchase link]*
+
 - NXP i.MX RT1176 Processor
 - Arm Cortex-M7 @1GHz, 32KB/32KB L1 Cache
 - Arm Cortex-M4F @400MHz, 16KB/16KB L1 Cache
@@ -26,17 +28,24 @@ TensorFlow Lite model-based implementation of object detector configured to run 
 - (includes 512KB of A7 TCM and 256KB M4 TCM)
 - 256 Mb Onboard SDRAM
 - 256 Mb Onboard HyperFlash
+<p align = "right">
+<br />[Click image for purchase link]
+</p>
+
 
 ## MCU-Link debug probe
 
-[<img width="400" src="https://www.nxp.com/assets/images/en/dev-board-image/MCU-LINK-TOP.jpg">](https://www.avnet.com/shop/us/products/nxp/mcu-link-3074457345644906182/)
+[<img width="400" src="./images/MCU-LINK-TOP.jpg">](https://www.avnet.com/shop/us/products/nxp/mcu-link-3074457345644906182/)
+*<br />[Click image for purchase link]*
 
 ## MIPI DSI 7-INCH capacitive touch display AES-ACC-MAAX-DISP1
 
-[<img width="400" src="https://www.avnet.com/opasdata/d120001/derivates/2/072/242/815/Disp1_web.jpg">](https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-acc-maax-disp1-3074457345642357170?krypto=FJFBRsl95iTv7wDNuSR8nKfh4sDa6wB9tRUqa52bF9fY8qx%2F7OjPbCiUNS6NdeU%2FTw2C17S6PEcEqiaAm6FCSHthotP00D7734JXiaXbNjB8KklgQy8Ie4MclHZgTePrekjNQS2KTRs8J2k1oyje7g%3D%3D)
+[<img width="400" src="./images/Disp1_web.jpg">](https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-acc-maax-disp1-3074457345642357170?krypto=FJFBRsl95iTv7wDNuSR8nKfh4sDa6wB9tRUqa52bF9fY8qx%2F7OjPbCiUNS6NdeU%2FTw2C17S6PEcEqiaAm6FCSHthotP00D7734JXiaXbNjB8KklgQy8Ie4MclHZgTePrekjNQS2KTRs8J2k1oyje7g%3D%3D)
+*<br />[Click image for purchase link]*
 
 ## MaaXBoard MIPI CSI camera AES-ACC-MAAX-CAM1 
-[<img width="400" src="https://www.avnet.com/opasdata/d120001/derivates/2/072/242/829/AES-ACC-MAAX-CAM1-Image_web.jpg">](https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-acc-maax-cam1-3074457345642357172/)
+[<img width="400" src="./images/AES-ACC-MAAX-CAM1-Image_web.jpg">](https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-acc-maax-cam1-3074457345642357172/)
+*<br />[Click image for purchase link]*
 
 
 # Preparing the Demo
