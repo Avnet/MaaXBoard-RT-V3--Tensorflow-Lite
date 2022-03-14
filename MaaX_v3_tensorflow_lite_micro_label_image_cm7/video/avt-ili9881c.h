@@ -37,22 +37,22 @@ struct ili9881c_instr {
 };
 
 #define ILI9881C_SWITCH_PAGE_INSTR(_page)	\
-	{										\
-		.op = ILI9881C_SWITCH_PAGE,			\
-		.arg = {							\
-			.page = (_page),				\
-		},									\
+	{					\
+		.op = ILI9881C_SWITCH_PAGE,	\
+		.arg = {			\
+			.page = (_page),	\
+		},				\
 	}
 
 #define ILI9881C_COMMAND_INSTR(_cmd, _data)	\
-	{										\
-		.op = ILI9881C_COMMAND,				\
-		.arg = {							\
-			.cmd = {						\
-				.cmd = (_cmd),				\
-				.data = (_data),			\
-			},								\
-		},									\
+	{					\
+		.op = ILI9881C_COMMAND,		\
+		.arg = {			\
+			.cmd = {		\
+				.cmd = (_cmd),	\
+				.data = (_data),\
+			},			\
+		},				\
 	}
 
 
