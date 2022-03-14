@@ -8,6 +8,7 @@
 
 #ifndef _AVT_ILI9881C_H_
 #define _AVT_ILI9881C_H_
+#endif
 
 #include "fsl_display.h"
 #include "fsl_mipi_dsi_cmd.h"
@@ -15,6 +16,46 @@
 /*******************************************************************************
  * Definitions
  ******************************************************************************/
+
+#define ILI9881C_DelayMs VIDEO_DelayMs
+#define ILI9881C VIDEO_DelayMs
+
+enum ili9881c_op {
+	ILI9881C_SWITCH_PAGE,
+	ILI9881C_COMMAND,
+};
+
+struct ili9881c_instr {
+	enum ili9881c_op	op;
+
+	union arg {
+		struct cmd {
+			uint8_t	cmd;
+			uint8_t	data;
+		} cmd;
+		uint8_t	page;
+	} arg;
+};
+
+#define ILI9881C_SWITCH_PAGE_INSTR(_page)	\
+	{					\
+		.op = ILI9881C_SWITCH_PAGE,	\
+		.arg = {			\
+			.page = (_page),	\
+		},				\
+	}
+
+#define ILI9881C_COMMAND_INSTR(_cmd, _data)	\
+	{					\
+		.op = ILI9881C_COMMAND,		\
+		.arg = {			\
+			.cmd = {		\
+				.cmd = (_cmd),	\
+				.data = (_data),\
+			},			\
+		},				\
+	}
+
 
 /*!
  * @brief ILI9881C resource.
@@ -47,5 +88,3 @@ status_t ILI9881C_Stop(display_handle_t *handle);
 #if defined(__cplusplus)
 }
 #endif
-
-#endif /* _FSL_RM68200_H_ */

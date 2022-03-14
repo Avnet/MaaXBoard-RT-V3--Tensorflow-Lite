@@ -2,18 +2,6 @@
  *
  * Copyright (C) 2017-2018, Bootlin
  */
-/*
-#include <linux/module.h>
-#include <linux/gpio/consumer.h>
-#include <linux/regulator/consumer.h>
-#include <drm/drm_mipi_dsi.h>
-#include <drm/drm_modes.h>
-#include <drm/drm_panel.h>
-#include <drm/drmP.h>
-#include <drm/drm_crtc.h>
-#include <video/mipi_display.h>
-#include <video/videomode.h>
-*/
 
 #include "fsl_display.h"
 #include "avt-ili9881c.h"
@@ -23,43 +11,6 @@
 /*******************************************************************************
  * Definitions
  ******************************************************************************/
-#define ILI9881C_DelayMs VIDEO_DelayMs
-
-enum ili9881c_op {
-	ILI9881C_SWITCH_PAGE,
-	ILI9881C_COMMAND,
-};
-
-struct ili9881c_instr {
-	enum ili9881c_op	op;
-
-	union arg {
-		struct cmd {
-			uint8_t	cmd;
-			uint8_t	data;
-		} cmd;
-		uint8_t	page;
-	} arg;
-};
-
-#define ILI9881C_SWITCH_PAGE_INSTR(_page)	\
-	{										\
-		.op = ILI9881C_SWITCH_PAGE,			\
-		.arg = {							\
-			.page = (_page),				\
-		},									\
-	}
-
-#define ILI9881C_COMMAND_INSTR(_cmd, _data)	\
-	{										\
-		.op = ILI9881C_COMMAND,				\
-		.arg = {							\
-			.cmd = {						\
-				.cmd = (_cmd),				\
-				.data = (_data),			\
-			},								\
-		},									\
-	}
 
 static const struct ili9881c_instr ili9881c_init[] = {
 	ILI9881C_SWITCH_PAGE_INSTR(3),
@@ -264,9 +215,6 @@ static const struct ili9881c_instr ili9881c_init[] = {
 #endif
 };
 
-/////////////////////// PETER START ///////////////////////
-
-#define ILI9881C VIDEO_DelayMs
 
 const display_operations_t ili9881c_ops = {
     .init   = ILI9881C_Init,
@@ -301,23 +249,17 @@ status_t ILI9881C_Init(display_handle_t *handle, const display_config_t *config)
     ILI9881C_DelayMs(120);
 
     /* Set the LCM init settings. */
-    ////////////////////////////////////////////////////////
     for (i = 0; i < ARRAY_SIZE(ili9881c_init); i++)
     {
-    	//pf status = MIPI_DSI_GenericWrite(dsiDevice, lcmInitSetting[i], 2); //pf
-
     	const struct ili9881c_instr *instr = &ili9881c_init[i];
 
 		if (instr->op == ILI9881C_SWITCH_PAGE)
-		//pf status = ili9881c_switch_page(instr->arg.page); //pf
 		{
 			uint8_t buf[4] = { 0xff, 0x98, 0x81, instr->arg.page};
 			MIPI_DSI_GenericWrite(dsiDevice, buf, sizeof(buf));
-			PRINTF("Switch Page %X\r\n", buf[3]);  //pf
 		}
 
 		else if (instr->op == ILI9881C_COMMAND)
-		//pf status = ili9881c_send_cmd_data(instr->arg.cmd.cmd, instr->arg.cmd.data);  //pf
 		{
 			uint8_t buf[2] = { instr->arg.cmd.cmd, instr->arg.cmd.data};
 			MIPI_DSI_GenericWrite(dsiDevice, buf, sizeof(buf));
@@ -329,7 +271,6 @@ status_t ILI9881C_Init(display_handle_t *handle, const display_config_t *config)
             return status;
         }
     }
-    ////////////////////////////////////////////////////////
 
     ILI9881C_DelayMs(200);
 
@@ -350,35 +291,6 @@ status_t ILI9881C_Init(display_handle_t *handle, const display_config_t *config)
     return kStatus_Success;
 }
 
-/*
-static status_t ili9881c_switch_page(uint8_t page)
-{
-	uint8_t buf[4] = { 0xff, 0x98, 0x81, page };
-	status_t ret;
-
-	ret = MIPI_DSI_GenericWrite(dsiDevice, buf, sizeof(buf));
-	if (ret < 0) {
-		// PRINTF("Failed to switch_page[%d] (%d)\n", page, ret);
-		return ret;
-	}
-
-	return 0;
-}
-
-static status_t ili9881c_send_cmd_data(uint8_t cmd, uint8_t data)
-{
-	uint8_t buf[2] = { cmd, data };
-	status_t ret;
-
-	ret = MIPI_DSI_GenericWrite(dsiDevice, buf, sizeof(buf));
-	if (ret < 0) {
-		//  PRINTF("Failed to send_cmd_data[%02x,%02X] (%d)\n", cmd, data, ret);
-		return ret;
-	}
-
-	return 0;
-}
-*/
 
 status_t ILI9881C_Deinit(display_handle_t *handle)
 {
@@ -410,5 +322,4 @@ status_t ILI9881C_Stop(display_handle_t *handle)
 
     return MIPI_DSI_DCS_SetDisplayOn(dsiDevice, false);
 }
-/////////////////////// PETER END   ///////////////////////
 
