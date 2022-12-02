@@ -278,7 +278,7 @@ static const struct ili9881c_instr ili9881c_init[] = {
 	ILI9881C_COMMAND_INSTR(0x2f, 0x11),
 #endif
 };
-#elif (DEMO_PANEL == DEMO_PANEL_PH720128T003)
+#else
 static const struct ili9881c_instr ili9881c_init[] = {
 	ILI9881C_SWITCH_PAGE_INSTR(3),
 	ILI9881C_COMMAND_INSTR(0x01, 0x00),
