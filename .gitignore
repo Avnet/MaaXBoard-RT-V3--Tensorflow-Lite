@@ -7,3 +7,4 @@ language.settings.xml
 .vscode/
 .settings/
 /.metadata/
+*.log

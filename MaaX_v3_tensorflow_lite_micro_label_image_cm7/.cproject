@@ -32,6 +32,7 @@
 								<option id="gnu.cpp.compiler.option.preprocessor.preprocess.1557134892" name="Preprocess only (-E)" superClass="gnu.cpp.compiler.option.preprocessor.preprocess" useByScannerDiscovery="false"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.preprocessor.def.136347149" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="CPU_MIMXRT1176DVMAA"/>
+									<listOptionValue builtIn="false" value="AES_ACC_MAAX_DISP2"/>
 									<listOptionValue builtIn="false" value="CPU_MIMXRT1176DVMAA_cm7"/>
 									<listOptionValue builtIn="false" value="SDK_DEBUGCONSOLE_UART"/>
 									<listOptionValue builtIn="false" value="ARM_MATH_CM7"/>
@@ -130,6 +131,7 @@
 							<tool id="com.crt.advproject.gcc.exe.debug.1671861436" name="MCU C Compiler" superClass="com.crt.advproject.gcc.exe.debug">
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.preprocessor.def.symbols.1071823752" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__NEWLIB__"/>
+									<listOptionValue builtIn="false" value="AES_ACC_MAAX_DISP2"/>
 									<listOptionValue builtIn="false" value="CPU_MIMXRT1176DVMAA"/>
 									<listOptionValue builtIn="false" value="CPU_MIMXRT1176DVMAA_cm7"/>
 									<listOptionValue builtIn="false" value="XIP_BOOT_HEADER_DCD_ENABLE=1"/>
@@ -260,7 +262,7 @@
 							<tool id="com.crt.advproject.link.cpp.exe.debug.315335662" name="MCU C++ Linker" superClass="com.crt.advproject.link.cpp.exe.debug">
 								<option id="com.crt.advproject.link.cpp.thumb.852008540" name="Thumb mode" superClass="com.crt.advproject.link.cpp.thumb" value="true" valueType="boolean"/>
 								<option id="com.crt.advproject.link.memory.load.image.cpp.2045819026" name="Plain load image" superClass="com.crt.advproject.link.memory.load.image.cpp" useByScannerDiscovery="false" value="" valueType="string"/>
-								<option defaultValue="com.crt.advproject.heapAndStack.mcuXpressoStyle.cpp" id="com.crt.advproject.link.memory.heapAndStack.style.cpp.2028756521" name="Heap and Stack placement" superClass="com.crt.advproject.link.memory.heapAndStack.style.cpp" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option defaultValue="com.crt.advproject.heapAndStack.mcuXpressoStyle.cpp" id="com.crt.advproject.link.memory.heapAndStack.style.cpp.2028756521" name="Heap and Stack placement" superClass="com.crt.advproject.link.memory.heapAndStack.style.cpp" useByScannerDiscovery="false" value="Default" valueType="enumerated"/>
 								<option id="com.crt.advproject.link.memory.heapAndStack.cpp.1143681150" name="Heap and Stack options" superClass="com.crt.advproject.link.memory.heapAndStack.cpp" value="&amp;Heap:BOARD_SDRAM;Post Data;0x80000&amp;Stack:SRAM_DTC_cm7;End;0x10000" valueType="string"/>
 								<option id="com.crt.advproject.link.memory.data.cpp.20675483" name="Global data placement" superClass="com.crt.advproject.link.memory.data.cpp" useByScannerDiscovery="false" value="" valueType="string"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.crt.advproject.link.memory.sections.cpp.1320563757" name="Extra linker script input sections" superClass="com.crt.advproject.link.memory.sections.cpp" useByScannerDiscovery="false" valueType="stringList">
@@ -664,7 +666,7 @@
 							<tool id="com.crt.advproject.link.cpp.exe.release.1624383679" name="MCU C++ Linker" superClass="com.crt.advproject.link.cpp.exe.release">
 								<option id="com.crt.advproject.link.cpp.thumb.108585093" name="Thumb mode" superClass="com.crt.advproject.link.cpp.thumb" value="true" valueType="boolean"/>
 								<option id="com.crt.advproject.link.memory.load.image.cpp.1134458952" name="Plain load image" superClass="com.crt.advproject.link.memory.load.image.cpp" value="" valueType="string"/>
-								<option defaultValue="com.crt.advproject.heapAndStack.mcuXpressoStyle.cpp" id="com.crt.advproject.link.memory.heapAndStack.style.cpp.339017969" name="Heap and Stack placement" superClass="com.crt.advproject.link.memory.heapAndStack.style.cpp" valueType="enumerated"/>
+								<option defaultValue="com.crt.advproject.heapAndStack.mcuXpressoStyle.cpp" id="com.crt.advproject.link.memory.heapAndStack.style.cpp.339017969" name="Heap and Stack placement" superClass="com.crt.advproject.link.memory.heapAndStack.style.cpp" value="Default" valueType="enumerated"/>
 								<option id="com.crt.advproject.link.memory.heapAndStack.cpp.1380269184" name="Heap and Stack options" superClass="com.crt.advproject.link.memory.heapAndStack.cpp" value="&amp;Heap:BOARD_SDRAM;Post Data;0x80000&amp;Stack:SRAM_DTC_cm7;End;0x10000" valueType="string"/>
 								<option id="com.crt.advproject.link.memory.data.cpp.1450170841" name="Global data placement" superClass="com.crt.advproject.link.memory.data.cpp" value="" valueType="string"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.crt.advproject.link.memory.sections.cpp.1266512023" name="Extra linker script input sections" superClass="com.crt.advproject.link.memory.sections.cpp" valueType="stringList">
@@ -840,7 +842,7 @@
 	<storageModule moduleId="com.nxp.mcuxpresso.core.datamodels">
 		<sdkName>SDK_2.x_MIMXRT1170-EVK</sdkName>
 		<sdkExample>evkmimxrt1170_tensorflow_lite_micro_label_image_cm7</sdkExample>
-		<sdkVersion>2.10.1</sdkVersion>
+		<sdkVersion>2.11.0</sdkVersion>
 		<sdkComponents>driver.camera-device-common.MIMXRT1176;driver.camera-receiver-common.MIMXRT1176;driver.camera-device-sccb.MIMXRT1176;driver.camera-device-ov5640.MIMXRT1176;driver.display-rm68191.MIMXRT1176;driver.display-rm68200.MIMXRT1176;driver.camera-common.MIMXRT1176;driver.camera-receiver-csi.MIMXRT1176;platform.drivers.csi.MIMXRT1176;driver.video-common.MIMXRT1176;driver.video-i2c.MIMXRT1176;platform.drivers.elcdif.MIMXRT1176;platform.drivers.pxp.MIMXRT1176;driver.dc-fb-common.MIMXRT1176;driver.dc-fb-elcdif.MIMXRT1176;driver.dc-fb-lcdifv2.MIMXRT1176;driver.display-common.MIMXRT1176;driver.display-mipi-dsi-cmd.MIMXRT1176;platform.drivers.common.MIMXRT1176;platform.drivers.mipi_dsi_split.MIMXRT1176;platform.drivers.igpio.MIMXRT1176;platform.drivers.mipi_csi2rx.MIMXRT1176;platform.drivers.soc_mipi_csi2rx.MIMXRT1176;platform.drivers.soc_src.MIMXRT1176;utility.debug_console_lite.MIMXRT1176;platform.utilities.assert_lite.MIMXRT1176;middleware.eiq.worker.video.MIMXRT1176;middleware.eiq.gui.printf.MIMXRT1176;middleware.eiq.tensorflow_lite_micro.MIMXRT1176;component.lists.MIMXRT1176;component.lpuart_adapter.MIMXRT1176;platform.drivers.lpuart.MIMXRT1176;platform.devices.MIMXRT1176_CMSIS.MIMXRT1176;platform.devices.MIMXRT1176_startup.MIMXRT1176;platform.drivers.dcdc_soc.MIMXRT1176;platform.drivers.pmu_1.MIMXRT1176;platform.drivers.clock.MIMXRT1176;platform.drivers.iomuxc.MIMXRT1176;platform.drivers.lpi2c.MIMXRT1176;platform.drivers.xip_device.MIMXRT1176;platform.drivers.xip_board.evkmimxrt1170.MIMXRT1176;middleware.eiq.tensorflow_lite_micro.cmsis_nn.MIMXRT1176;platform.drivers.anatop_ai.MIMXRT1176;CMSIS_Include_core_cm.MIMXRT1176;platform.drivers.memory.MIMXRT1176;platform.drivers.lcdifv2.MIMXRT1176;middleware.eiq.worker.MIMXRT1176;middleware.eiq.tensorflow_lite_micro.third_party.flatbuffers.MIMXRT1176;middleware.eiq.tensorflow_lite_micro.third_party.gemmlowp.MIMXRT1176;middleware.eiq.tensorflow_lite_micro.third_party.ruy.MIMXRT1176;platform.utilities.misc_utilities.MIMXRT1176;platform.devices.MIMXRT1176_system.MIMXRT1176;middleware.eiq.tensorflow_lite_micro.third_party.cmsis_nn.MIMXRT1176;CMSIS_DSP_Library.MIMXRT1176;evkmimxrt1170_tensorflow_lite_micro_label_image_cm7;</sdkComponents>
 		<boardId>evkmimxrt1170</boardId>
 		<package>MIMXRT1176DVMAA</package>
